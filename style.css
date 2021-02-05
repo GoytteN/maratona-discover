@@ -52,10 +52,13 @@ h2 {
 a {
   color: var(--green);
   text-decoration: none;
+
+  transition: 300ms;
 }
 
 a:hover {
   color: #3DD705;
+  transition: 300ms;
 }
 
 .button.new {
@@ -276,7 +279,7 @@ input {
   margin-top: 0.8rem;
 }
 
-.input-group small {
+.input-group .help {
   opacity: 0.4;
 }
 

@@ -26,7 +26,7 @@
             <span>Entradas</span>
             <img src="./assets/income.svg" alt="Imagem de entradas">
           </h3>
-          <p>R$ 5.000,00</p>
+          <p id="incomeDisplay">R$ 0,00</p>
         </div>
 
         <div class="card">
@@ -34,21 +34,21 @@
             <span>Saídas</span>
             <img src="./assets/expense.svg" alt="Imagem de Saídas">
           </h3>
-          <p>R$ 2.000</p>
+          <p id="expenseDisplay">R$ 0,00</p>
         </div>
         <div class="card total">
           <h3>
             <span>Total</span>
             <img src="./assets/total.svg" alt="Imagem de Total">
           </h3>
-          <p>R$ 3.000,00</p>
+          <p id="totalDisplay">R$ 0,00</p>
         </div>
       </section>
 
       <div id="transaction">
         <h2 class="sr-only">Transações</h2>
 
-        <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a>
+        <a href="#" onclick="toggle()" class="button new">+ Nova Transação</a>
         <table id="data-table">
           <thead>
             <th>Descrição</th>
@@ -58,32 +58,6 @@
           </thead>
 
           <tbody>
-            <tr>
-              <td class="descripton">Luz</td>
-              <td class="expense">-R$ 500,00</td>
-              <td calss="date">23/01/2021</td>
-              <td>
-                <img src="./assets/minus.svg" alt="Remover Transação">
-              </td>
-            </tr>
-
-            <tr>
-              <td class="descripton">Criação website</td>
-              <td class="income">R$ 5000,00</td>
-              <td calss="date">23/01/2021</td>
-              <td>
-                <img src="./assets/minus.svg" alt="Remover Transação">
-              </td>
-            </tr>
-
-            <tr>
-              <td class="descripton">Internet</td>
-              <td class="expense">-R$ 200,00</td>
-              <td calss="date">23/01/2021</td>
-              <td>
-                <img src="./assets/minus.svg" alt="Remover Transação">
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
@@ -93,7 +67,7 @@
       <div class="modal">
         <div id="form">
           <h2>Nova Transação</h2>
-          <form action="">
+          <form action="" onsubmit="Form.submit(event)">
             <div class="input-group">
               <label 
                 class="sr-only"
@@ -114,7 +88,7 @@
                 step="0.01"
                 id="amount"
                 name="amount" 
-                placeholder="Valor"
+                placeholder="0,00"
               />
               <small class="help">Use o sinal - (negativo)  para desoesas e , (vŕgula) para casas decimais</small>
             </div>
@@ -132,7 +106,7 @@
             </div>
 
             <div class="input-group actions">
-              <a onclick="Modal.close()" href="#" class="button cancel">Cancelar</a>
+              <a onclick="toggle()" href="#" class="button cancel">Cancelar</a>
               <button>Salvar</button>
             </div>
           </form>
@@ -141,9 +115,9 @@
     </div>
 
     <footer>
-      <p>dev.finance$</p>
+      <p>2021 - dev.finance$</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
